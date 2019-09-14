@@ -146,6 +146,7 @@
 				TargetAttributes = {
 					06A208811D85B9C200E51C13 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2YPD3Z2H74;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -155,6 +156,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -408,12 +410,13 @@
 			baseConfigurationReference = 96BCB9438D07638552D13F50 /* Pods-FileExplorerExampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2YPD3Z2H74;
 				INFOPLIST_FILE = FileExplorerExampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.augustyniak.FileExplorerExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -422,12 +425,13 @@
 			baseConfigurationReference = 77839C1FF7229F28C3A0C502 /* Pods-FileExplorerExampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2YPD3Z2H74;
 				INFOPLIST_FILE = FileExplorerExampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.augustyniak.FileExplorerExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

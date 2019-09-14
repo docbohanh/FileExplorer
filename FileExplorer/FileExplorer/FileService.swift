@@ -35,7 +35,7 @@ protocol FileService: class {
 
 enum FileServiceError: Error {
     case removalFailure(removedItems: [Item<Any>], itemsNotRemovedDueToFailure: [Item<Any>])
-    case loadingFailure()
+    case loadingFailure
 }
 
 extension Notification.Name {
@@ -54,7 +54,7 @@ final class LocalStorageFileService: FileService {
     func load(item: Item<Any>, completionBlock: @escaping (Result<LoadedItem<Any>>) -> ()) {
         DispatchQueue.global(qos: .default).async {
             let result = Result<LoadedItem<Any>>() { [weak self] in
-                guard let strongSelf = self else { throw FileServiceError.loadingFailure() }
+                guard let strongSelf = self else { throw FileServiceError.loadingFailure }
                 
                 let attributes = try strongSelf.fileManager.attributesOfItem(atPath: item.url.path)
                 let result: Any
@@ -83,10 +83,10 @@ final class LocalStorageFileService: FileService {
         var itemsNotRemovedDueToFailure = [Item<Any>]()
 
         DispatchQueue.global(qos: .default).async() { [weak self] in
-            guard let strongSelf = self else { return }
+            
             for item in items {
                 do {
-                    try strongSelf.fileManager.removeItem(at: item.url)
+                    try self?.fileManager.removeItem(at: item.url)
                     deletedItems.append(item)
                 } catch {
                     itemsNotRemovedDueToFailure.append(item)
@@ -97,13 +97,13 @@ final class LocalStorageFileService: FileService {
                 if deletedItems.count > 0 {
                     NotificationCenter.default.post(name: Notification.Name.ItemsDeleted, object: deletedItems)
                 }
-                strongSelf.isDeletionInProgress = false
+                self?.isDeletionInProgress = false
                 if itemsNotRemovedDueToFailure.count > 0 {
                     completionBlock(.error(FileServiceError.removalFailure(removedItems: deletedItems, itemsNotRemovedDueToFailure: itemsNotRemovedDueToFailure)),
                                     deletedItems,
                                     itemsNotRemovedDueToFailure)
                 } else {
-                    completionBlock(.success(), deletedItems, itemsNotRemovedDueToFailure)
+                    completionBlock(.success(()), deletedItems, itemsNotRemovedDueToFailure)
                 }
 
             }
