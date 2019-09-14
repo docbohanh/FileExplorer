@@ -5,7 +5,7 @@ target 'FileExplorerExampleApp' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'FileExplorer', :path => './../FileExplorer.podspec.json'
+  pod 'FileExplorer', :git => 'https://github.com/docbohanh/FileExplorer.git'
 
 end
 

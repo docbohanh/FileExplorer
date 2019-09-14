@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  FileExplorerTestHostApp
+//  Array+Extension.swift
+//  FileExplorer
 //
 //  Created by Rafal Augustyniak on 27/11/2016.
 //  Copyright (c) 2016 Rafal Augustyniak
@@ -23,20 +23,29 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+extension Array where Element: Equatable {
+    @discardableResult
+    mutating func remove(_ item: Element) -> Bool {
+        let index = self.firstIndex() { $0 == item }
+        if let index = index {
+            remove(at: index)
+            return true
+        } else {
+            return false
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+extension Sequence where Iterator.Element == Filter {
+    func matchesItem(_ item: Item<Any>) -> Bool {
+        for filter in self {
+            if filter.matchesItem(item) {
+                return true
+            }
+        }
+
+        return false
+    }
+}
