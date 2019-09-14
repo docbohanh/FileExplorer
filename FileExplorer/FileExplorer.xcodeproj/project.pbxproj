@@ -118,7 +118,6 @@
 		063C9CDC1DD7299200F96F43 /* LocalStorageFileServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageFileServiceTests.swift; sourceTree = "<group>"; };
 		063C9CDE1DD733B800F96F43 /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		063C9CE71DD7697200F96F43 /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ImageAssets.xcassets; path = Resources/ImageAssets.xcassets; sourceTree = "<group>"; };
-		063C9CE81DD7697200F96F43 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		063C9CFC1DD77E3200F96F43 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		0649A8441DF03BF900D2B0BC /* UknownFileTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UknownFileTypeViewController.swift; sourceTree = "<group>"; };
 		0649A8461DF0418C00D2B0BC /* UknownFileTypeViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UknownFileTypeViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
@@ -241,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				063C9CE71DD7697200F96F43 /* ImageAssets.xcassets */,
-				063C9CE81DD7697200F96F43 /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
